@@ -1,0 +1,38 @@
+const express = require('express');
+const app = express();
+
+const port = 3000;
+
+/*aqui empieza el servidor*/
+app.get('/', (req, res) => {
+    res.send('Hola mundo desde mi casa..xD')
+});
+
+app.get("/productos", (req,res) => {
+    const products = [
+    {
+      id: 1,
+      name: "hammer",
+    },
+    {
+      id: 2,
+      name: "screwdriver",
+    },
+    ,
+    {
+      id: 3,
+      name: "wrench",
+    },
+   ];
+  
+   res.json(products); //aqui le digo que me devuelva un json
+  });
+
+
+
+app.listen(port, ()=>{
+    console.log(`Servidor funcionando en el puerto ${port}!`)
+});
+/*aqui termina el servidor*/
+
+
